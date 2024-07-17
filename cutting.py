@@ -1,6 +1,5 @@
 import os
 import shutil
-import subprocess
 import cv2
 import dlib
 from PIL import Image, ImageEnhance
@@ -52,33 +51,6 @@ def Detect_and_crop_face(output_size):
     pil_img.save("Real-ESRGAN/inputs/image.jpg")
     print(f"Processed image saved as {output_path}")
 
-def EnhanceImage():
-    command = [
-        'python',
-        'Real-ESRGAN/inference_realesrgan.py',
-        '-n', 'RealESRGAN_x4plus',
-        '-i', 'Real-ESRGAN/inputs',
-        '--face_enhance'
-    ]
-
-    # 執行命令
-    result = subprocess.run(command, capture_output=True, text=True)
-    print("Standard Output:\n", result.stdout)
-    print("Standard Error:\n", result.stderr)
-
-def ScalingImage(output_size):
-    # 讀取圖片
-    img = cv2.imread('Real-ESRGAN/results/image_out.jpg')
-
-    # 縮放圖片到 500x500
-    resized_img = cv2.resize(img, (500, 500))
-
-    # 保存縮放後的圖片
-    cv2.imwrite('output/image.jpg', resized_img)
-
-# 調用函數，設置輸出大小為 n*m (例如：200x300)
 Detect_and_crop_face((500, 500))
-EnhanceImage()
-ScalingImage((500, 500))
 
 

@@ -20,7 +20,7 @@ python setup.py install
 ```
 
 ## 測試 real-esrgan 是否正常運作
-在 Real-ESRGAN 專案根目錄下執行以下指令
+在 Real-ESRGAN 目錄下執行以下指令
 ```bash
 python inference_realesrgan.py -n RealESRGAN_x4plus -i inputs --face_enhance
 ```
@@ -30,8 +30,10 @@ python inference_realesrgan.py -n RealESRGAN_x4plus -i inputs --face_enhance
     * 解決方法: https://blog.csdn.net/lanxing147/article/details/136625264
 
 # 執行
+在本專案根目錄中執行
 輸入的圖片放在 input 資料夾中
 圖片將會輸出在 output 資料夾中
 ```bash
-python main.py
+chmod +x run_scripts.sh
+./run_scripts.sh
 ```
