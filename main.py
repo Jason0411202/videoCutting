@@ -78,7 +78,7 @@ def ScalingImage(output_size):
 
 # 調用函數，設置輸出大小為 n*m (例如：200x300)
 Detect_and_crop_face((500, 500))
-#EnhanceImage()
-#ScalingImage((500, 500))
+EnhanceImage()
+ScalingImage((500, 500))
 
 

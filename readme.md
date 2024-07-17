@@ -12,7 +12,11 @@ pip install facexlib
 pip install gfpgan
 pip install -r requirements.txt
 python setup.py develop
-wget https://github.com/xinntao/Real-ESRGAN/releases/download/v0.1.0/RealESRGAN_x4plus.pth -P experiments/pretrained_models
+cd ..
+git clone https://github.com/davisking/dlib
+cd dlib
+python -m pip install cmake
+python setup.py install
 ```
 
 ## 測試 real-esrgan 是否正常運作
