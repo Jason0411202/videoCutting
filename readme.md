@@ -21,6 +21,10 @@ wget https://github.com/xinntao/Real-ESRGAN/releases/download/v0.1.0/RealESRGAN_
 python inference_realesrgan.py -n RealESRGAN_x4plus -i inputs --face_enhance
 ```
 
+## 除錯紀錄
+* 有時候會出現以下錯誤 `No module named ‘torchvision.transforms.functional_tensor`
+    * 解決方法: https://blog.csdn.net/lanxing147/article/details/136625264
+
 # 執行
 輸入的圖片放在 input 資料夾中
 圖片將會輸出在 output 資料夾中

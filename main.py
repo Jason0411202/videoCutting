@@ -44,6 +44,7 @@ def Detect_and_crop_face(output_size):
     pil_img = pil_img.resize(output_size, Image.Resampling.LANCZOS) # 調整圖片大小
     enhancer = ImageEnhance.Sharpness(pil_img) # 簡單的畫質增強
     pil_img = enhancer.enhance(2.0)  # 增強銳度
+    pil_img.save("mid/image.jpg")
 
     ClearDirectory('Real-ESRGAN/inputs')  # 先清空上一次的輸出目錄
 
@@ -67,7 +68,7 @@ def EnhanceImage():
 
 def ScalingImage(output_size):
     # 讀取圖片
-    img = cv2.imread('Real-ESRGAN/results/image.jpg')
+    img = cv2.imread('Real-ESRGAN/results/image_out.jpg')
 
     # 縮放圖片到 500x500
     resized_img = cv2.resize(img, (500, 500))
@@ -77,7 +78,7 @@ def ScalingImage(output_size):
 
 # 調用函數，設置輸出大小為 n*m (例如：200x300)
 Detect_and_crop_face((500, 500))
-EnhanceImage()
-ScalingImage((500, 500))
+#EnhanceImage()
+#ScalingImage((500, 500))
 
 
