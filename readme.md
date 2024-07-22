@@ -18,6 +18,7 @@ git clone https://github.com/davisking/dlib
 cd dlib
 python -m pip install cmake
 python setup.py install
+pip install python-dotenv
 ```
 
 ## 配置環境變數
