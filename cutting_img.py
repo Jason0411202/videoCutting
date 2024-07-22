@@ -16,6 +16,8 @@ BIAS_Y=int(os.getenv("BIAS_Y"))
 PADDING=float(os.getenv("PADDING"))
 INPUT_DIR=os.getenv("INPUT_DIR")
 MID_1_DIR=os.getenv("MID_1_DIR")
+MID_2_DIR=os.getenv("MID_2_DIR")
+OUTPUT_DIR=os.getenv("OUTPUT_DIR")
 
 def ClearDirectory(directory):
     # 先清空 directory 目錄下的所有檔案與資料夾
@@ -30,9 +32,13 @@ def ClearDirectory(directory):
             print(f'Failed to delete {file_path}. Reason: {e}')
 
 def Detect_and_crop_face(output_size):
+    # 先清空上一次的輸出目錄
+    ClearDirectory(MID_1_DIR)
+    ClearDirectory(MID_2_DIR)
+    ClearDirectory(OUTPUT_DIR)
+
     file_names = os.listdir(INPUT_DIR)
     file_names = [f for f in file_names if os.path.isfile(os.path.join(INPUT_DIR, f))]
-
     for file_name in file_names:
         image_path = os.path.join(INPUT_DIR, file_name)
 
@@ -61,8 +67,6 @@ def Detect_and_crop_face(output_size):
         pil_img = pil_img.resize(output_size, Image.Resampling.LANCZOS) # 調整圖片大小
         enhancer = ImageEnhance.Sharpness(pil_img) # 簡單的畫質增強
         pil_img = enhancer.enhance(2.0)  # 增強銳度
-
-        ClearDirectory(MID_1_DIR)  # 先清空上一次的輸出目錄
 
         output_path = os.path.join(MID_1_DIR, file_name)
         pil_img.save(output_path)

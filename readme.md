@@ -30,8 +30,8 @@ PADDING=0.5 # dlib 切出來的人臉區域，要加上圖片長的幾倍作為 
 BIAS_X=0 # 切出來的圖片長的偏移量
 BIAS_Y=0 # 切出來的圖片寬的偏移量
 INPUT_DIR=./input # 專案的輸入資料夾
-MID_DIR=./Real-ESRGAN/inputs # 切割後的圖片輸出之暫存資料夾
-MID_2_DIR=./output # 切割與提升畫質完之圖片的暫存資料夾
+MID_1_DIR=./Real-ESRGAN/inputs # 切割後的圖片輸出之暫存資料夾
+MID_2_DIR=./Real-ESRGAN/results # 切割與提升畫質完之圖片的暫存資料夾
 OUTPUT_DIR=./output # 專案的輸出資料夾
 ```
 
