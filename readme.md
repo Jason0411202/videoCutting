@@ -1,4 +1,5 @@
 # 環境配置
+## 安裝所需依賴
 * 環境: python 3.11
 * 註: win10 安裝 dlib   https://github.com/z-mahmud22/Dlib_Windows_Python3.x
 
@@ -19,13 +20,27 @@ python -m pip install cmake
 python setup.py install
 ```
 
-## 測試 real-esrgan 是否正常運作
+## 配置環境變數
+在本專案根目錄下建立 `.env` 檔案，並填入以下內容
+```
+CUTTING_SIZE_X=500 # 切出來的圖片長所占的像素
+CUTTING_SIZE_Y=500 # 切出來的圖片寬所占的像素
+PADDING=0.5 # dlib 切出來的人臉區域，要加上圖片長的幾倍作為 padding
+BIAS_X=0 # 切出來的圖片長的偏移量
+BIAS_Y=0 # 切出來的圖片寬的偏移量
+INPUT_DIR=./input # 專案的輸入資料夾
+MID_DIR=./Real-ESRGAN/inputs # 切割後的圖片輸出之暫存資料夾
+MID_2_DIR=./output # 切割與提升畫質完之圖片的暫存資料夾
+OUTPUT_DIR=./output # 專案的輸出資料夾
+```
+
+## 測試 real-esrgan 是否正常運作 (可選)
 在 Real-ESRGAN 目錄下執行以下指令
 ```bash
 python inference_realesrgan.py -n RealESRGAN_x4plus -i inputs --face_enhance
 ```
 
-## 除錯紀錄
+## 除錯紀錄 (可選)
 * 有時候會出現以下錯誤 `No module named ‘torchvision.transforms.functional_tensor`
     * 解決方法: https://blog.csdn.net/lanxing147/article/details/136625264
 
