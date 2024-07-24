@@ -46,10 +46,20 @@ python inference_realesrgan.py -n RealESRGAN_x4plus -i inputs --face_enhance
     * 解決方法: https://blog.csdn.net/lanxing147/article/details/136625264
 
 # 執行
+## 處理圖片
 在本專案根目錄中執行
-輸入的圖片放在 input 資料夾中
-圖片將會輸出在 output 資料夾中
+輸入的圖片放在 input 資料夾中 (可以多張)
+最終輸出圖片將會輸出在 output 資料夾中
 ```bash
-chmod +x run_scripts.sh
-./run_scripts.sh
+chmod +x process_img.sh
+./process_img.sh
+```
+
+## 處理影片
+在本專案根目錄中執行
+輸入的影片放在 input 資料夾中 (只能放一部)
+最終輸出的影片將會輸出在 output 資料夾中
+```bash
+chmod +x process_video.sh
+./process_video.sh
 ```
