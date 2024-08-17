@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# 進入本專案所需環境
+conda activate /mnt/Nami/users/Jason0411202/anaconda3/envs/real3dportrait
+
 # 執行 cutting_img.py 腳本
 python cutting_img.py
 
